@@ -1,0 +1,93 @@
+{
+    // Configuration File Information
+    "name": "Simple Code Analyzer Configuration Example",
+    "description": "A simple Code Analyzer configuration for better coding practices",
+    "author" : "Adam Sifounakis",
+    "guidelineVersion" : "0.1.0",
+    "schemaVersion" : "1.0.0",
+
+    // Base Configuration Settings
+    // For better consistency, use "factory" for the configuration at the root of your codebase,
+    // and use "closestParentFolder" for configurations nested deeper in your codebase
+    "baseConfiguration" : "factory",
+
+    "checks":
+    {
+        // ======================================
+        // Enable additional Code Analyzer checks
+        // ======================================
+        "DISALLOWEVAL" :
+        {
+            // Disallow use of eval* functions
+            "rule":
+            {
+                "template": "functionCall",
+                "functionNames" : ["eval","evalc"]
+            },
+            "severity" : "error",
+            "messageText" : "The use of \"eval\" and \"evalc\" is forbidden in production code.",
+            "enabled" : true
+        },
+        "FCNLL" :
+        {
+            // Disallow very long functions (too many lines)
+            "limit" : 2000,
+            "severity" : "error",
+            "enabled" : true
+        },
+        "LLMNC" :
+        {
+            // Disallow very long lines (too many characters)
+            "limit" : 1000,
+            "severity" : "error",
+            "enabled" : true
+        },
+        "MNCSN" :
+        {
+            // Disallow the use of deeply nested control statements
+            "limit" : 10,
+            "severity" : "error",
+            "enabled": true
+        },
+        "FCNIL" :
+        {
+            // Warn when functions have 10 or more input arguments
+            "limit" : 10,
+            "severity" : "warning",
+            "enabled": true
+        },
+        "FCNOL" :
+        {
+            // Warn when functions have 10 or more output arguments
+            "limit" : 10,
+            "severity" : "warning",
+            "enabled": true
+        },
+
+        // =================================================
+        // Increase severity of default Code Analyzer checks
+        // =================================================
+        "GVMIS" :
+        {
+            // Do not use global variables
+            "severity" : "error"
+        },
+        "EVLCS" :
+        {
+            // "eval" family of functions is slow and unclear
+            "severity" : "error"
+        },
+        "NOANS" :
+        {
+            // Do not use "ans" as a variable
+            "severity" : "error"
+        },
+        "CHAIN" :
+        {
+            // Chained logical operations like "a > b > c" are usually a bug
+            //     For scalars, it should be: "(a > b) && (b > c)"
+            //     For arrays, it should be: "(a > b) & (b > c)"
+            "severity" : "error"
+        }
+    }
+}
