@@ -1,6 +1,6 @@
 [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=mathworks/Simple-Code-Analyzer-Configuration&file=GettingStarted.mlx)
 
-# Simple Code Analzyer Configuration
+# Simple Code Analyzer Configuration
 
 This repository provides a simple Code Analyzer configuration example that increases the strictness of the Code Analyzer in MATLAB®.
 
